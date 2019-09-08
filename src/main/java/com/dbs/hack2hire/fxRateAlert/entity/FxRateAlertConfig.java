@@ -37,9 +37,6 @@ public class FxRateAlertConfig {
 	@Column(name = "desired_exchange_rate")
 	private Double desiredExchangeRate;
 	
-	@Column(name = "travel_date")
-	private Date travelDate;
-	
 	@Column(name = "notifications_required")
 	private String notificationsRequired;
 
@@ -76,14 +73,6 @@ public class FxRateAlertConfig {
 
 	public void setDesiredExchangeRate(Double desiredExchangeRate) {
 		this.desiredExchangeRate = desiredExchangeRate;
-	}
-
-	public Date getTravelDate() {
-		return travelDate;
-	}
-
-	public void setTravelDate(Date travelDate) {
-		this.travelDate = travelDate;
 	}
 
 	public long getId() {

@@ -37,8 +37,8 @@ public class FxRateAlertNotificationController {
 		return fxRateAlertNotificationResponse;
 	}
 	
-	//@Scheduled(cron = "${notification.cron}")
-	@RequestMapping(value =FxRateAlertConstants.notifications + "/fetchNotifications",method = RequestMethod.POST)
+	@Scheduled(cron = "${notification.cron}")
+	//@RequestMapping(value =FxRateAlertConstants.notifications + "/fetchNotifications",method = RequestMethod.POST)
 	public void sendNotifications() {
 		logger.info("IN FxRateAlertNotificationResponse.sendNotifications");
 		fxRateAlertNotificationService.sendNotifications();

@@ -1,6 +1,8 @@
 package com.dbs.hack2hire.fxRateAlert.response;
 
 import java.sql.Date;
+import java.util.List;
+
 
 public class TrasferWiseExchangeRateResponse {
 	private Double rate;
@@ -31,6 +33,7 @@ public class TrasferWiseExchangeRateResponse {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	
-	
+
+
+
 }

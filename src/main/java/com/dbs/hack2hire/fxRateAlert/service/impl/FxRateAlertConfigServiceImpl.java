@@ -64,7 +64,7 @@ public class FxRateAlertConfigServiceImpl implements FxRateAlertConfigService{
 			Optional<FxRateAlertConfig> alertConfigOptional = fxRateAlertCofigRepository.findById(id);
 			if(alertConfigOptional.isPresent()) {
 				fxRateAlertCofigRepository.updateAlertConfig(alertConfig.getBaseCurrency(),alertConfig.getExchangeCurrency(),
-						alertConfig.getNotificationsRequired(),alertConfig.getDesiredExchangeRate(),alertConfig.getTravelDate(),alertConfig.getId());
+						alertConfig.getNotificationsRequired(),alertConfig.getDesiredExchangeRate(),alertConfig.getId());
 				fxRateUpdateResponse.setMessage(FxRateAlertConstants.alertConfigUpdateSuccess);
 			}
 		} catch (Exception e) {

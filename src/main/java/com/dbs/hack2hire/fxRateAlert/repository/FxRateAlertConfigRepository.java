@@ -17,12 +17,11 @@ public interface FxRateAlertConfigRepository extends JpaRepository<FxRateAlertCo
 	List<FxRateAlertConfig> findByUserId(Long userId);
 	
 	@Query("update FxRateAlertConfig set baseCurrency = :baseCurrency , exchangeCurrency =:exchangeCurrency ,"
-			+ " notificationsRequired =:notificationsRequired,desiredExchangeRate= :desiredExchangeRate,travelDate =:travelDate where id =:id ")
+			+ " notificationsRequired =:notificationsRequired,desiredExchangeRate= :desiredExchangeRate where id =:id ")
 	@Modifying
 	void updateAlertConfig(@Param("baseCurrency") String baseCurrency,@Param("exchangeCurrency") String exchangeCurrency,
-			@Param("notificationsRequired")String notificationsRequired,@Param("desiredExchangeRate") Double desiredExchangeRate,
-			@Param("travelDate")Date travelDate , @Param("id") Long id);
+			@Param("notificationsRequired")String notificationsRequired,@Param("desiredExchangeRate") Double desiredExchangeRate, @Param("id") Long id);
 	
-	@Query("select ac from FxRateAlertConfig ac where travelDate >= sysdate and notificationsRequired = 'Y'")
+	@Query("select ac from FxRateAlertConfig ac where  notificationsRequired = 'Y'")
 	List<FxRateAlertConfig> findAlertConfigsForNotifications();
 }
